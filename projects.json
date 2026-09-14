@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Floor of Lava",
+    "demoUrl": "https://rcream.github.io/floor-of-lava/",
+    "codeUrl": "https://github.com/Rcream/floor-of-lava",
+    "description": "My first project when experimenting with AI.",
+    "tags": ["HTML/CSS/JS", "Game"]
+  },
+  {
+    "name": "VHS Pong",
+    "demoUrl": "https://rcream.github.io/VHS_pong/",
+    "codeUrl": "https://github.com/Rcream/VHS_pong",
+    "description": "A pong clone.",
+    "tags": ["HTML/CSS/JS", "Game"]
+  },
+  {
+    "name": "Spinner RNG",
+    "demoUrl": "https://rcream.github.io/spinner-rng/",
+    "codeUrl": "https://github.com/Rcream/spinner-rng",
+    "description": "A game with a simple game loop.",
+    "tags": ["HTML/CSS/JS", "Game"]
+  },
+  {
+    "name": "Flort",
+    "demoUrl": "https://rcream.github.io/flort/",
+    "codeUrl": "https://github.com/Rcream/flort",
+    "description": "A CADlite tool.",
+    "tags": ["HTML/CSS/JS", "Tool"]
+  }
+]

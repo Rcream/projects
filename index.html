@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rcream Projects</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; }
+
+    header { text-align: center; margin-bottom: 2.5rem; }
+    header h1 { font-size: 1.75rem; font-weight: 600; }
+    header p { color: #8b949e; margin-top: 0.4rem; font-size: 0.95rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #58a6ff; }
+
+    .card h2 { font-size: 1.1rem; font-weight: 600; }
+
+    .card p {
+      color: #8b949e;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tag {
+      background: #1f2937;
+      color: #7ee787;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .links { display: flex; gap: 0.75rem; margin-top: auto; padding-top: 0.4rem; }
+    .links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .links .demo {
+      background: #238636;
+      color: #fff;
+    }
+    .links .demo:hover { background: #2ea043; }
+    .links .code {
+      border: 1px solid #30363d;
+      color: #e6edf3;
+    }
+    .links .code:hover { border-color: #8b949e; }
+
+    @media (max-width: 480px) {
+      body { padding: 1.25rem 0.75rem; }
+      header h1 { font-size: 1.4rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rcream Projects</h1>
+      <p>A collection of browser-based experiments.</p>
+    </header>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <script>
+    // Project data embedded directly to avoid CORS issues with local file opening
+    const projects = [
+      {
+        "name": "Floor of Lava",
+        "demoUrl": "https://rcream.github.io/floor-of-lava/",
+        "codeUrl": "https://github.com/Rcream/floor-of-lava",
+        "description": "My first project when experimenting with AI.",
+        "tags": ["HTML/CSS/JS", "Game"]
+      },
+      {
+        "name": "VHS Pong",
+        "demoUrl": "https://rcream.github.io/VHS_pong/",
+        "codeUrl": "https://github.com/Rcream/VHS_pong",
+        "description": "A pong clone.",
+        "tags": ["HTML/CSS/JS", "Game"]
+      },
+      {
+        "name": "Spinner RNG",
+        "demoUrl": "https://rcream.github.io/spinner-rng/",
+        "codeUrl": "https://github.com/Rcream/spinner-rng",
+        "description": "A game with a simple game loop.",
+        "tags": ["HTML/CSS/JS", "Game"]
+      },
+      {
+        "name": "Flort",
+        "demoUrl": "https://rcream.github.io/flort/",
+        "codeUrl": "https://github.com/Rcream/flort",
+        "description": "A CADlite tool.",
+        "tags": ["HTML/CSS/JS", "Tool"]
+      }
+    ];
+
+    const grid = document.getElementById("grid");
+
+    projects.forEach(function (p) {
+      var card = document.createElement("div");
+      card.className = "card";
+
+      var tags = p.tags.map(function (t) {
+        return '<span class="tag">' + t + '</span>';
+      }).join("");
+
+      card.innerHTML =
+        '<h2>' + p.name + '</h2>' +
+        '<p>' + p.description + '</p>' +
+        '<div class="tags">' + tags + '</div>' +
+        '<div class="links">' +
+          '<a class="demo" href="' + p.demoUrl + '" target="_blank" rel="noopener">Play demo</a>' +
+          '<a class="code" href="' + p.codeUrl + '" target="_blank" rel="noopener">View code</a>' +
+        '</div>';
+
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
